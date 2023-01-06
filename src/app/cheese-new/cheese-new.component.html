@@ -1,0 +1,40 @@
+<div class="justify-content-center" style="width: 40em; margin: auto;">
+  <h1 class="h1 mt-3 mb-5">Ajouter un nouveau fromage</h1>
+
+  <div class="col-12 col-sm-6 mt-4">
+    <div class="form-group">
+      <label class='h5'>Nom</label><br>
+      <input type="text" class="form-control" [(ngModel)]="cheese.cheeseName" style="width: 40em">
+    </div>
+  </div>
+  <div class="col-12 col-sm-6 mt-4">
+    <div class="form-group">
+      <label class='h5'>Image</label><br>
+      <input type="text" class="form-control" [(ngModel)]="cheese.cheeseImg" style="width: 40em">
+    </div>
+  </div>
+
+  <div class="col-12 col-sm-6 mt-4">
+    <div class="form-group">
+      <label class='h5'>Lait</label><br>
+      <input type="text" class="form-control" [(ngModel)]="cheese.milk" style="width: 40em">
+    </div>
+  </div>
+  <div class="col-12 col-sm-6 mt-4">
+    <div class="form-group">
+      <label class='h5'>Département</label><br>
+      <input type="text" class="form-control" [(ngModel)]="cheese.dpt" style="width: 40em">
+    </div>
+  </div>
+
+  <div class="row mt-5" style="width: 5em; margin: auto">
+    <div class="col-12">
+      <div class="submit">
+        <button class="btn btn-outline-success" (click)="add()">Ajouter</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

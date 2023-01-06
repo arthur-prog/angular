@@ -1,0 +1,55 @@
+<h1 class="h1 mb-4" style="width: 30em; margin: auto; text-align: center">Nos fromages</h1>
+<h3 class="h3 mb-4" style="width: 30em; margin: auto; text-align: center">Filtres</h3>
+
+<div class="row justify-content-center" id="basic-example-filters" data-mdb-items=".basic-example-item" data-mdb-auto-filter="true">
+  <div class="col-md-3" data-mdb-filter="color">
+    <h5 class="fa-lg">Lait</h5>
+
+    <div class="form-check mt-3">
+      <input class="form-check-input" type="radio" name="radioMilk" id="inlineRadio4" value="" (change)="onMilkChange($event)">
+      <label class="form-check-label" for="inlineRadio1">Tous</label>
+    </div>
+
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="radioMilk" id="inlineRadio1" value="Vache" (change)="onMilkChange($event)">
+      <label class="form-check-label" for="inlineRadio1">Vache</label>
+    </div>
+
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="radioMilk" id="inlineRadio2" value="Brebis" (change)="onMilkChange($event)">
+      <label class="form-check-label" for="inlineRadio2">Brebis</label>
+    </div>
+
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="radioMilk" id="inlineRadio3" value="Chèvre" (change)="onMilkChange($event)">
+      <label class="form-check-label" for="inlineRadio3">Chèvre</label>
+    </div>
+  </div>
+
+  <div class="col-md-3" data-mdb-filter="sale">
+    <h5 class="fa-lg">Département</h5>
+
+    <select class="form-select" aria-label="Default select example" style="width: auto" (change)="onDptChange($event)">
+      <option selected value="">Tous</option>
+      <option *ngFor="let dpt of dptList"  [value]="dpt.dep_name">{{ dpt.dep_name }}</option>
+    </select>
+
+  </div>
+</div>
+
+
+
+<div class="align-content-center" style="width: 40em; margin: auto">
+  <div *ngIf="cheeses.length == 0" style="margin-top: 50px">
+    <p>Aucun résultat</p>
+  </div>
+  <app-cheese *ngFor="let cheese of cheeses; let i = index"
+              [cheeseName]="cheese.cheeseName"
+              [cheeseImg]="cheese.cheeseImg"
+              [milk]="cheese.milk"
+              [dpt]="cheese.dpt"
+              [wiki]="cheese.wiki"
+              [id]="cheese.id">
+
+  </app-cheese>
+</div>

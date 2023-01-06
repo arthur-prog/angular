@@ -1,0 +1,19 @@
+<div class="card m-4" style="width: 40rem">
+  <img class="card-img-top" [src]="cheeseImg" alt="Card image cap">
+  <div class="card-body" style="text-align: center">
+    <h5 class="card-title">{{ cheeseName }}</h5>
+    <p>Lait: {{ milk }}</p>
+    <p>Département: {{ dpt }}</p>
+    <table class="table mb-0">
+      <td>
+        <a href="{{ wiki }}" class="btn btn-outline-primary mx-4">Page wikipédia</a>
+      </td>
+      <td>
+        <a class="btn btn-primary mx-4" [routerLink]="['/update', id]">Modifier</a>
+      </td>
+      <td>
+        <button class="btn btn-danger mx-4" (click)="del()">Supprimer</button>
+      </td>
+    </table>
+  </div>
+</div>
